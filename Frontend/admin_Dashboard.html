@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | THE STORE</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@800;900&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body class="admin-body">
+
+    <!-- Top Admin Navigation Bar -->
+    <header class="admin-topbar">
+        <div class="admin-nav-container">
+            <div class="admin-nav-left">
+                <a href="admin_Dashboard.html" class="admin-brand">
+                    STORE<span>.ADMIN</span>
+                </a>
+
+                <nav class="admin-menu-links">
+                    <a href="admin_Dashboard.html" class="admin-nav-item active">Dashboard</a>
+                    <a href="admin_ProductPage.html" class="admin-nav-item">Products</a>
+                    <a href="admin_UsersPage.html" class="admin-nav-item">Users</a>
+                    <a href="admin_OrdersPage.html" class="admin-nav-item">Orders</a>
+                </nav>
+            </div>
+
+            <div class="admin-nav-right">
+                <a href="index.html" class="admin-nav-item storefront-link" title="Open Storefront">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Storefront
+                </a>
+
+                <div class="admin-user-pill">
+                    <i class="fa-regular fa-circle-user"></i>
+                    <span id="adminEmail">Loading...</span>
+                </div>
+
+                <button type="button" class="admin-logout-btn" title="Sign out" onclick="logoutUser()">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Viewport -->
+    <main class="admin-container">
+
+        <!-- Page Header -->
+        <section class="admin-header-area">
+            <h1>ADMIN DASHBOARD</h1>
+            <p>Direct shortcuts to platform control, catalog, accounts, and order management.</p>
+        </section>
+
+        <!-- 3-Tile Launchpad Grid -->
+        <div class="dashboard-grid">
+
+            <!-- 01: Catalog & Inventory -->
+            <div class="admin-card launch-card">
+                <div class="launch-content">
+                    <span class="launch-tag">01</span>
+                    <h2>Catalog & Inventory</h2>
+                    <p>Add new streetwear pieces, update stock and pricing, and manage products.</p>
+                </div>
+
+                <div class="launch-action">
+                    <a href="admin_ProductPage.html" class="launch-btn">
+                        Open Products Page
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 02: Accounts & Access -->
+            <div class="admin-card launch-card">
+                <div class="launch-content">
+                    <span class="launch-tag">02</span>
+                    <h2>Accounts & Access</h2>
+                    <p>View admin and customer accounts, create new logins, and manage access.</p>
+                </div>
+
+                <div class="launch-action">
+                    <a href="admin_UsersPage.html" class="launch-btn">
+                        Visit Accounts Data
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 03: Orders & Billing -->
+            <div class="admin-card launch-card">
+                <div class="launch-content">
+                    <span class="launch-tag">03</span>
+                    <h2>Orders & Billing</h2>
+                    <p>View customer orders, review detailed bill logs, and track sales receipts.</p>
+                </div>
+
+                <div class="launch-action">
+                    <a href="admin_OrdersPage.html" class="launch-btn">
+                        View Invoices & Bills
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/admin_Dashboard.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sign Up | THE STORE</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@800;900&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+
+    <!-- jQuery -->
+    <script src="js/jquery-3.6.0.js"></script>
+</head>
+
+<body>
+
+    <div id="navbar"></div>
+
+    <main class="auth-page">
+
+        <div class="auth-card">
+
+            <div class="auth-header">
+                <h1>JOIN THE CREW<span>.</span></h1>
+            </div>
+
+            <form id="signupForm" class="auth-form" onsubmit="event.preventDefault();">
+
+                <!-- Name -->
+                <div class="form-group">
+
+                    <label for="signupName">Full Name</label>
+
+                    <div class="input-wrap">
+
+                        <i class="fa-regular fa-user"></i>
+
+                        <input
+                            type="text"
+                            id="signupName"
+                            placeholder="Enter your full name"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Email -->
+                <div class="form-group">
+
+                    <label for="signupEmail">Email Address</label>
+
+                    <div class="input-wrap">
+
+                        <i class="fa-regular fa-envelope"></i>
+
+                        <input
+                            type="email"
+                            id="signupEmail"
+                            placeholder="name@domain.com"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Password -->
+                <div class="form-group">
+
+                    <label for="signupPassword">Password</label>
+
+                    <div class="input-wrap">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="signupPassword"
+                            placeholder="Create a secure password"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Confirm Password -->
+                <div class="form-group">
+
+                    <label for="signupConfirmPassword">Confirm Password</label>
+
+                    <div class="input-wrap">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="signupConfirmPassword"
+                            placeholder="Confirm your password"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Submit -->
+                <button type="submit" class="auth-submit-btn">
+
+                    CREATE ACCOUNT
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </form>
+
+
+            <div class="auth-switch">
+
+                <span>Already registered?</span>
+
+                <a href="login.html">Sign In</a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <div id="footer"></div>
+
+
+    <script src="js/fetchNavAndFooter.js"></script>
+    <script src="js/auth.js"></script>
+
+</body>
+
+</html>
+

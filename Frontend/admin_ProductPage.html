@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management | STORE Admin</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@800;900&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/admin_products.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body class="admin-body">
+
+    <!-- Top Navigation Bar -->
+    <header class="admin-topbar">
+        <div class="admin-nav-container">
+            <div class="admin-nav-left">
+                <a href="admin_Dashboard.html" class="admin-brand">
+                    STORE<span>.ADMIN</span>
+                </a>
+
+                <nav class="admin-menu-links">
+                    <a href="admin_Dashboard.html" class="admin-nav-item">Dashboard</a>
+                    <a href="admin_ProductPage.html" class="admin-nav-item active">Products</a>
+                    <a href="admin_UsersPage.html" class="admin-nav-item">Users</a>
+                    <a href="admin_OrdersPage.html" class="admin-nav-item">Orders</a>
+                </nav>
+            </div>
+
+            <div class="admin-nav-right">
+                <a href="index.html" class="admin-nav-item storefront-link" title="Open Storefront">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Storefront
+                </a>
+
+                <div class="admin-user-pill">
+                    <i class="fa-regular fa-circle-user"></i>
+                    <span id="adminEmail">Loading...</span>
+                </div>
+
+                <button type="button" class="admin-logout-btn" title="Sign out" onclick="logoutUser()">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="admin-container">
+        <div class="admin-title-area">
+            <h1>ADD NEW COSTUME</h1>
+            <p>Register new costumes into the store catalog with category, price, and inventory details.</p>
+        </div>
+
+        <section class="admin-card form-card">
+            <!-- Header with Title and Button Side-by-Side -->
+            <div class="card-header">
+                <h2>Product Details</h2>
+                <button type="button" id="btnSave" class="admin-btn btn-primary">
+                    <i class="fa-solid fa-plus"></i> ADD NEW PRODUCT
+                </button>
+            </div>
+
+            <form id="productForm" autocomplete="off" onsubmit="event.preventDefault();">
+                <div class="form-fields">
+                    <div class="form-group full-width">
+                        <label for="productName">Product Title</label>
+                        <input type="text" id="productName" class="admin-input"
+                            placeholder="e.g. Cyber Cargo Tactical Cape" required>
+                    </div>
+
+                    <div class="form-row-3">
+                        <div class="form-group">
+                            <label for="productCategory">Category</label>
+                            <select id="productCategory" class="admin-select" required>
+                                <option value="" disabled selected hidden>Select a category</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="productPrice">Price (₹)</label>
+                            <input type="number" id="productPrice" class="admin-input" placeholder="0.00"
+                                step="1" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="productStock">Available Stock</label>
+                            <input type="number" id="productStock" class="admin-input" placeholder="0" min="0" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="productImage">Image File Path</label>
+                        <input type="text" id="productImage" class="admin-input"
+                            placeholder="e.g. images/pants/cargo1.avif" required>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="productDesc">Description</label>
+                        <textarea id="productDesc" rows="4" class="admin-textarea"
+                            placeholder="Fabric specs, silhouette, and details..."></textarea>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/admin_Dashboard.js"></script>
+    <script src="js/admin_ProductPage.js"></script>
+
+</body>
+
+</html>

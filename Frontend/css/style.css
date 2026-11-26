@@ -1,0 +1,571 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #f8f8f8;
+  color: #191919;
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =========================================
+   Sticky Navbar & True Center Navigation
+========================================= */
+#navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+nav {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative; /* Anchor for absolute center positioning */
+}
+
+.brand-logo,
+nav a[href="index.html"] {
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  z-index: 2;
+}
+
+nav a[href="index.html"] span {
+  color: #e11d48;
+}
+
+/* True Dead-Center Category Links */
+#navCategories {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+}
+
+#navCategories a {
+  font-size: 13.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #191919;
+  transition: color 0.2s ease;
+}
+
+#navCategories a:hover {
+  color: #e11d48;
+}
+
+/* Right Side Actions */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    z-index: 2;
+}
+
+#authIcon {
+  font-size: 19px;
+  color: #191919;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+#authIcon:hover {
+  color: #e11d48;
+}
+
+.bag-link {
+  position: relative;
+  font-size: 19px;
+  color: #191919;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+.bag-link:hover {
+  color: #e11d48;
+}
+
+#cart-count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: #e11d48;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 800;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+}
+
+.admin-dash-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #f8d030;
+  color: #191919;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.admin-dash-btn i {
+  font-size: 12px;
+}
+
+.admin-dash-btn:hover {
+  background-color: #e11d48;
+  color: #ffffff;
+}
+
+/* =========================================
+   User Account Dropdown 
+========================================= */
+.user-dropdown {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.user-menu-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #191919;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  transition: color 0.2s ease;
+}
+
+.user-menu-btn:hover {
+  color: #e11d48;
+}
+
+.user-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  background-color: #ffffff;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  min-width: 180px;
+  padding: 10px 0 8px;
+  border-radius: 10px;
+  z-index: 1002;
+}
+
+.user-dropdown-menu.show {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header text alignment */
+.user-dropdown-header {
+  padding: 4px 16px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Left-aligns text with the menu items */
+}
+
+.user-welcome {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #8c8c8c;
+}
+
+.user-name {
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-size: 16px;
+  font-weight: 900;
+  color: #191919;
+  margin-top: 2px;
+}
+
+.user-dropdown-divider {
+  height: 1px;
+  background-color: #f0f0f0;
+  margin: 6px 0;
+}
+
+/* Dropdown menu action items */
+.user-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 16px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  color: #191919;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.user-dropdown-item i {
+  font-size: 14px;
+  width: 16px;
+  color: #737373;
+  transition: color 0.2s ease;
+}
+
+.user-dropdown-item:hover {
+  background-color: #f8f8f8;
+  color: #e11d48;
+}
+
+.user-dropdown-item:hover i {
+  color: #e11d48;
+}
+
+/* =========================================
+   Hero Section
+========================================= */
+.hero {
+  max-width: 1240px;
+  margin: 32px auto 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  background-color: #0d0d0d;
+  color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  min-height: 440px;
+}
+
+.hero-text {
+  padding: 56px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-tag {
+  background-color: #f8d030;
+  color: #000000;
+  display: inline-block;
+  align-self: flex-start;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.hero-text h1 {
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-size: 48px;
+  line-height: 1.05;
+  font-weight: 900;
+  margin-bottom: 14px;
+}
+
+.hero-text p {
+  color: #a3a3a3;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 28px;
+  max-width: 440px;
+}
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  align-self: flex-start;
+  background-color: #e11d48;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  padding: 14px 28px;
+  border-radius: 8px;
+  transition: opacity 0.2s ease;
+}
+
+.hero-btn:hover {
+  opacity: 0.95;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+}
+
+/* =========================================
+   Categories Section
+========================================= */
+#categories {
+  max-width: 1240px;
+  margin: 40px auto 40px;
+  padding: 0;
+}
+
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 16px;
+}
+
+.category-header h2 {
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+}
+
+.category-header a {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #e11d48;
+}
+
+#categoryCards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+article {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background-color: #eaeaea;
+}
+
+article a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+article img {
+  transition: transform 0.3s ease;
+}
+
+article:hover img {
+  transform: scale(1.04);
+}
+
+article div {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px 16px 16px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, transparent 100%);
+  color: #ffffff;
+  text-align: center;
+}
+
+article h3 {
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+
+article div span {
+  font-size: 11px;
+  font-weight: 700;
+  color: #f8d030;
+  letter-spacing: 1px;
+}
+
+/* =========================================
+   Footer (Symmetrical & Clean Streetwear)
+========================================= */
+#footer {
+  margin-top: auto;
+  width: 100%;
+}
+
+footer {
+  background-color: #0d0d0d;
+  color: #ffffff;
+  padding: 24px;
+  border-top: 3px solid #191919;
+}
+
+.footer-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  gap: 20px;
+}
+
+/* Left Column: Brand & Copyright stacked */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.footer-brand .brand-logo {
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.footer-brand .brand-logo span {
+  color: #e11d48;
+}
+
+.footer-brand p {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: #737373;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Right Column: Contact on top, Socials below */
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.contact-label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #f8d030;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.contact-link {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #a3a3a3;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s ease;
+}
+
+.contact-link i {
+  font-size: 10px;
+  color: #737373;
+}
+
+.contact-link:hover {
+  color: #e11d48;
+}
+
+.contact-link:hover i {
+  color: #e11d48;
+}
+
+/* Social Icons in a straight horizontal line */
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+}
+
+.footer-socials a {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  background-color: #191919;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 13px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-socials a:hover {
+  background-color: #e11d48;
+  color: #ffffff;
+  transform: translateY(-2px);
+}

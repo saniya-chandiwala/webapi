@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users Directory | STORE Admin</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@800;900&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/admin_users.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body class="admin-body">
+
+    <!-- Top Navigation Bar -->
+    <header class="admin-topbar">
+        <div class="admin-nav-container">
+            <div class="admin-nav-left">
+                <a href="admin_Dashboard.html" class="admin-brand">
+                    STORE<span>.ADMIN</span>
+                </a>
+
+                <nav class="admin-menu-links">
+                    <a href="admin_Dashboard.html" class="admin-nav-item">Dashboard</a>
+                    <a href="admin_ProductPage.html" class="admin-nav-item">Products</a>
+                    <a href="admin_UsersPage.html" class="admin-nav-item active">Users</a>
+                    <a href="admin_OrdersPage.html" class="admin-nav-item">Orders</a>
+                </nav>
+            </div>
+
+            <div class="admin-nav-right">
+                <a href="index.html" class="admin-nav-item storefront-link" title="Open Storefront">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Storefront
+                </a>
+
+                <div class="admin-user-pill">
+                    <i class="fa-regular fa-circle-user"></i>
+                    <span id="adminEmail">Loading...</span>
+                </div>
+
+                <button type="button" class="admin-logout-btn" title="Sign out" onclick="logoutUser()">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="admin-container">
+        <!-- Header & Stats Badge Strip -->
+        <div class="admin-page-header">
+            <div>
+                <h1>REGISTERED USERS DIRECTORY</h1>
+                <p>Browse all registered customer and administrative profiles across the platform.</p>
+            </div>
+
+            <div class="user-stats-strip">
+                <div class="stat-pill">
+                    <span>Total Accounts</span>
+                    <strong id="statTotalUsers">0</strong>
+                </div>
+                <div class="stat-pill">
+                    <span>Customers</span>
+                    <strong id="statTotalCustomers">0</strong>
+                </div>
+                <div class="stat-pill">
+                    <span>Admins</span>
+                    <strong id="statTotalAdmins">0</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filter & Search Bar -->
+        <div class="admin-card filter-card">
+            <div class="filter-controls-grid">
+                <!-- Search Box -->
+                <div class="filter-group search-group">
+                    <label for="userSearchInput">Search Directory</label>
+                    <div class="search-input-wrap">
+
+    <i class="fa-solid fa-magnifying-glass"></i>
+
+    <input type="text"
+           id="userSearchInput"
+           placeholder="Search user..."
+           autocomplete="off">
+
+    <div id="userDropdown"></div>
+
+</div>
+                </div>
+
+                <!-- Role Filter -->
+                <div class="filter-group">
+                    <label for="roleFilter">Account Type</label>
+                    <select id="roleFilter" class="filter-select">
+                        <option value="all">All Roles</option>
+                        <option value="User">Customers</option>
+                        <option value="Admin">Admins</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Users Directory Table -->
+        <div class="admin-card table-card">
+            <div class="table-responsive">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>User ID</th>
+                            <th>User Information</th>
+                            <th>Email Address</th>
+                            <th style="text-align: right;">Role / Access</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usersTableBody">
+                        <!-- Loaded by js/admin_users.js -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="usersEmptyState" class="table-empty" style="display: none;">
+                <i class="fa-solid fa-user-slash"></i>
+                <h3>No users match your filters</h3>
+                <p>Try tweaking your search term or selecting a different account type.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/admin_users.js"></script>
+
+</body>
+
+</html>

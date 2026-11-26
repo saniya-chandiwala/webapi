@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3bd1508cfbda450da70dc3a34fba836c" Name="Diagram1">
+        <EntityTypeShape EntityType="ExamDBModel.Bill" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExamDBModel.BillDetail" Width="1.5" PointX="7.5" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExamDBModel.Cart" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExamDBModel.Category" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExamDBModel.Product" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExamDBModel.UserDetail" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExamDBModel.UserType" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <AssociationConnector Association="ExamDBModel.FK__Bill__UserID__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="ExamDBModel.FK__BillDetai__BillI__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="ExamDBModel.FK__BillDetai__Produ__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="ExamDBModel.FK__Cart__ProductID__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="ExamDBModel.FK__Cart__UserID__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="ExamDBModel.FK__Products__Catego__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="ExamDBModel.FK__UserDetai__TypeI__286302EC" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

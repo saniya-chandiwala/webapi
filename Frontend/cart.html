@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Bag | THE STORE</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@800;900&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cart.css">
+
+<script src="js/jquery-3.6.0.js"></script></head>
+
+<body>
+
+    <div id="navbar"></div>
+
+    <main class="cart-container">
+        <!-- Clean, Centered Header -->
+        <section class="cart-header">
+            <h1>YOUR BAG</h1>
+        </section>
+
+        <!-- Dynamic Content: Cart Layout or Empty State -->
+        <div id="cartContentWrapper">
+            <!-- Rendered by js/cart.js -->
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="js/fetchNavAndFooter.js"></script>
+    <script src="js/cart.js"></script>
+
+</body>
+
+</html>

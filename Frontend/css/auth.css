@@ -1,0 +1,163 @@
+
+/* =========================================
+   Auth Pages
+========================================= */
+
+.auth-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    width: 100%;
+}
+
+.auth-card {
+    background-color: #ffffff;
+    border: 1.5px solid #d4d4d4;
+    border-radius: 14px;
+    width: 100%;
+    max-width: 440px;
+    padding: 28px 32px 24px;
+}
+
+
+/* Header */
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.auth-header h1 {
+    font-family: 'Cabinet Grotesk', sans-serif;
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    color: #191919;
+    line-height: 1;
+    margin: 0;
+}
+
+.auth-header h1 span {
+    color: #e11d48;
+}
+
+
+/* Form */
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 11.5px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #191919;
+}
+
+
+/* Input Fields */
+
+.input-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-wrap i {
+    position: absolute;
+    left: 14px;
+    font-size: 13px;
+    color: #8c8c8c;
+    pointer-events: none;
+}
+
+.input-wrap input {
+    width: 100%;
+    height: 44px;
+    padding: 0 14px 0 40px;
+    background-color: #f8f8f8;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    color: #191919;
+    outline: none;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.input-wrap input::placeholder {
+    color: #a3a3a3;
+    font-weight: 500;
+}
+
+.input-wrap input:focus {
+    background-color: #ffffff;
+    border-color: #191919;
+}
+
+
+/* Submit Button */
+
+.auth-submit-btn {
+    width: 100%;
+    height: 46px;
+    background-color: #191919;
+    color: #ffffff;
+    border: 1px solid #191919;
+    border-radius: 8px;
+    font-family: 'Cabinet Grotesk', sans-serif;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 0.8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 6px;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.auth-submit-btn:hover {
+    background-color: #e11d48;
+    border-color: #e11d48;
+}
+
+
+/* Switch Link */
+
+.auth-switch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid #eeeeee;
+    font-size: 12px;
+    font-weight: 600;
+    color: #737373;
+}
+
+.auth-switch a {
+    font-weight: 800;
+    color: #191919;
+    transition: color 0.2s ease;
+}
+
+.auth-switch a:hover {
+    color: #e11d48;
+}
+

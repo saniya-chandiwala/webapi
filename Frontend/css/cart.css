@@ -1,0 +1,323 @@
+/* =========================================
+   Cart Page Stylesheet (Streetwear Minimalist)
+========================================= */
+
+.cart-container {
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto 60px;
+  padding: 40px 24px 0; /* Adds dedicated top breathing room below the navbar */
+}
+
+/* Centered Clean Header */
+.cart-header {
+  padding: 36px 0 28px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.cart-header h1 {
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: -0.2px;
+  color: #191919;
+  line-height: 1;
+  margin: 0;
+}
+
+/* Main Cart Grid */
+.cart-layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+/* Items List */
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Item Card */
+.cart-card {
+  position: relative; /* Added anchor for top-right absolute button */
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 20px;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 16px 20px 16px 16px;
+}
+
+.cart-card > img {
+  width: 110px;
+  aspect-ratio: 3 / 4;
+  border-radius: 8px;
+  object-fit: cover;
+  object-position: top center;
+  background-color: #eaeaea;
+  display: block;
+}
+
+.cart-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.cart-category {
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #e11d48;
+}
+
+.cart-title {
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-size: 16px;
+  font-weight: 900;
+  color: #191919;
+  line-height: 1.25;
+}
+
+.cart-desc {
+  font-size: 12px;
+  color: #737373;
+  line-height: 1.4;
+  margin-bottom: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Row with Quantity pill, delete button, and price */
+.cart-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 6px;
+}
+
+/* Quantity Pill */
+.qty-pill {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #e5e5e5;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #f8f8f8;
+}
+
+.qty-pill button {
+  background: transparent;
+  border: none;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #191919;
+  font-size: 14px;
+  font-weight: 700;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.qty-pill button:hover {
+  background-color: #191919;
+  color: #ffffff;
+}
+
+.qty-pill span {
+  font-size: 13px;
+  font-weight: 800;
+  width: 32px;
+  text-align: center;
+  color: #191919;
+}
+
+/* Remove button */
+.remove-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #8c8c8c;
+  font-size: 15px;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: color 0.2s ease, background-color 0.2s ease;
+  z-index: 2;
+}
+
+.remove-btn:hover {
+  color: #e11d48;
+  background-color: #f8f8f8;
+}
+
+/* Item Subtotal Price */
+.cart-price {
+  font-size: 16px;
+  font-weight: 900;
+  color: #191919;
+  margin-left: auto;
+}
+
+/* Order Summary Sidebar */
+.cart-summary {
+  background-color: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.cart-summary h2 {
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: -0.2px;
+  color: #191919;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0f0f0;
+  margin: 0;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: #737373;
+}
+
+.summary-row strong {
+  color: #191919;
+  font-weight: 800;
+}
+
+/* Green highlight for FREE delivery */
+.summary-row strong.free-badge {
+  color: #10b981;
+}
+
+.summary-divider {
+  height: 1px;
+  background-color: #e5e5e5;
+  margin: 2px 0;
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 800;
+  color: #191919;
+}
+
+.summary-total strong {
+  font-size: 20px;
+  font-weight: 900;
+  color: #191919;
+}
+
+.checkout-btn {
+  width: 100%;
+  height: 48px;
+  background-color: #191919;
+  color: #ffffff;
+  border: 1px solid #191919;
+  border-radius: 8px;
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-size: 13.5px;
+  font-weight: 900;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 6px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.checkout-btn:hover {
+  background-color: #e11d48;
+  border-color: #e11d48;
+}
+
+/* Empty Cart State */
+.empty-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 24px;
+  text-align: center;
+  background-color: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 14px;
+  max-width: 520px;
+  margin: 40px auto 0; /* Centers horizontally and pushes the card down */
+}
+
+.empty-cart i {
+  font-size: 42px;
+  color: #d4d4d4;
+  margin-bottom: 16px;
+}
+
+.empty-cart h2 {
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  margin-bottom: 6px;
+  color: #191919;
+}
+
+.empty-cart p {
+  font-size: 13px;
+  color: #737373;
+  margin-bottom: 24px;
+}
+
+.empty-cart a {
+  background-color: #191919;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  transition: background-color 0.2s ease;
+}
+
+.empty-cart a:hover {
+  background-color: #e11d48;
+}
+
+@media (max-width: 860px) {
+  .cart-layout {
+    grid-template-columns: 1fr;
+  }
+}

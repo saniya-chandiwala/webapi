@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout & Payment | THE STORE</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@800;900&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/payment.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    <div id="navbar"></div>
+
+    <main class="payment-container">
+        <!-- Clean Centered Header -->
+        <section class="payment-header">
+            <h1>CHECKOUT</h1>
+        </section>
+
+        <div class="payment-layout">
+            <!-- Left Side: Forms Column -->
+            <div class="payment-forms">
+
+                <!-- 01: Shipping Details -->
+                <div class="payment-card">
+                    <div class="card-title-row">
+                        <span class="step-num">01</span>
+                        <h2>SHIPPING DETAILS</h2>
+                    </div>
+
+                    <form id="shippingForm" class="checkout-form" onsubmit="event.preventDefault();">
+                        <!-- Row 1: Full Name (Single Line) -->
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" placeholder="John Doe" required>
+                        </div>
+
+                        <!-- Row 2: Email & Phone (Shared Row) -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="emailAddress">Email Address</label>
+                                <input type="email" id="emailAddress" placeholder="name@domain.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phoneNumber">Phone Number</label>
+                                <input type="tel" id="phoneNumber" placeholder="+91 98765 43210" required>
+                            </div>
+                        </div>
+
+                        <!-- Row 3: Street Address (Textarea) -->
+                        <div class="form-group">
+                            <label for="streetAddress">Street Address</label>
+                            <textarea id="streetAddress" rows="3"
+                                placeholder="Flat / House No., Building, Street Name, Landmark, Area"
+                                required></textarea>
+                        </div>
+
+                        <!-- Row 4: City, State, PIN Code -->
+                        <div class="form-row address-row">
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" id="city" placeholder="Navi Mumbai" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="state">State</label>
+                                <input type="text" id="state" placeholder="Maharashtra" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="pincode">PIN Code</label>
+                                <input type="text" id="pincode" placeholder="400705" maxlength="6" required>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- 02: Payment Details (Direct Card) -->
+                <div class="payment-card">
+                    <div class="card-title-row">
+                        <span class="step-num">02</span>
+                        <h2>PAYMENT DETAILS</h2>
+                    </div>
+
+                    <form id="cardForm" class="checkout-form" onsubmit="event.preventDefault();">
+                        <!-- Card Number -->
+                        <div class="form-group">
+                            <label for="cardNumber">Card Number</label>
+                            <div class="card-input-wrap">
+                                <input type="text" id="cardNumber" placeholder="4532 •••• •••• 8920" maxlength="19"
+                                    required>
+                                <i class="fa-regular fa-credit-card"></i>
+                            </div>
+                        </div>
+
+                        <!-- Expiry Date & CVV -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="cardExpiry">Expiry Date</label>
+                                <input type="text" id="cardExpiry" placeholder="MM / YY" maxlength="5" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cardCvv">Security Code (CVV)</label>
+                                <input type="password" id="cardCvv" placeholder="•••" maxlength="4" required>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- Right Side: Order Summary -->
+            <aside class="payment-summary">
+                <h2>ORDER SUMMARY</h2>
+
+                <!-- Static Product Items List -->
+                <div class="summary-items" id="summaryItemsList">
+                    <!-- Cart items loaded by payment.js -->
+                </div>
+
+                <div class="summary-divider"></div>
+
+                <!-- Price Calculations -->
+                <div class="summary-rows">
+                    <div class="summary-row">
+                        <span>Items Total</span>
+                        <strong id="summarySubtotal">₹ 0</strong>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Shipping</span>
+                        <strong style="color: #10b981;">FREE</strong>
+                    </div>
+                </div>
+
+                <div class="summary-divider"></div>
+
+                <div class="summary-total">
+                    <span>TOTAL PAYABLE</span>
+                    <strong id="summaryGrandTotal">₹ 0</strong>
+                </div>
+
+                <button type="submit" class="pay-btn" id="payNowBtn">
+                    PAY NOW <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </aside>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="js/fetchNavAndFooter.js"></script>
+    <script src="js/payment.js"></script>
+</body>
+
+</html>

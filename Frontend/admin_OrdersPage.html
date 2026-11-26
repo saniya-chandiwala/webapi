@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders Management | STORE Admin</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@800;900&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/admin_orders.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body class="admin-body">
+
+    <!-- Top Navigation Bar -->
+    <header class="admin-topbar">
+        <div class="admin-nav-container">
+            <div class="admin-nav-left">
+                <a href="admin_Dashboard.html" class="admin-brand">
+                    STORE<span>.ADMIN</span>
+                </a>
+
+                <nav class="admin-menu-links">
+                    <a href="admin_Dashboard.html" class="admin-nav-item">Dashboard</a>
+                    <a href="admin_ProductPage.html" class="admin-nav-item">Products</a>
+                    <a href="admin_UsersPage.html" class="admin-nav-item">Users</a>
+                    <a href="admin_OrdersPage.html" class="admin-nav-item active">Orders</a>
+                </nav>
+            </div>
+
+            <div class="admin-nav-right">
+                <a href="index.html" class="admin-nav-item storefront-link" title="Open Storefront">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Storefront
+                </a>
+
+                <div class="admin-user-pill">
+                    <i class="fa-regular fa-circle-user"></i>
+                    <span id="adminEmail">Loading...</span>
+                </div>
+
+                <button type="button" class="admin-logout-btn" title="Sign out" onclick="logoutUser()">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="admin-container">
+        <!-- Header & Stats Badge Strip -->
+        <div class="admin-page-header">
+            <div>
+                <h1>CUSTOMER ORDERS</h1>
+                <p>View purchase history, payment modes, and order breakdown details.</p>
+            </div>
+
+            <div class="order-stats-strip">
+                <div class="stat-pill">
+                    <span>Total Orders</span>
+                    <strong id="statTotalOrders">0</strong>
+                </div>
+                <div class="stat-pill">
+                    <span>Gross Revenue</span>
+                    <strong id="statTotalRevenue">₹ 0</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search Bar -->
+<div class="admin-card filter-card">
+
+    <div class="search-input-wrap">
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input type="text"
+               id="orderSearchInput"
+               placeholder="Search by Order ID or Customer Email..."
+               autocomplete="off">
+
+        <div id="orderEmailDropdown"></div>
+    </div>
+
+</div>
+
+        <!-- Orders Table Card -->
+        <div class="admin-card table-card">
+            <div class="table-responsive">
+                <table class="admin-table">
+                    <thead>
+    <tr>
+        <th>Order ID</th>
+        <th>Customer</th>
+        <th>Date Placed</th>
+        <th>Payment</th>
+        <th style="text-align: right;">Total Amount</th>
+        <th style="text-align: right;">Action</th>
+    </tr>
+</thead>
+                    <tbody id="ordersTableBody">
+                        <!-- Populated by js/admin_orders.js -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="ordersEmptyState" class="table-empty" style="display: none;">
+                <i class="fa-solid fa-receipt"></i>
+                <h3>No orders found</h3>
+                <p>No customer transactions match your search query.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Order Details Modal -->
+    <div class="admin-modal-overlay" id="orderDetailsModal" style="display: none;">
+        <div class="admin-modal order-modal">
+            <div class="modal-header">
+                <div>
+                    <span class="modal-order-tag" id="modalOrderTag">ORDER #0</span>
+                    <h2 id="modalCustomerName">Customer Order</h2>
+                </div>
+                <button type="button" class="modal-close-btn" id="closeOrderModalBtn">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="modal-meta-grid">
+                <div>
+                    <span class="meta-label">Date Placed</span>
+                    <strong class="meta-val" id="modalOrderDate">-</strong>
+                </div>
+                <div>
+                    <span class="meta-label">Payment Mode</span>
+                    <strong class="meta-val" id="modalOrderPayment">-</strong>
+                </div>
+            </div>
+
+            <div class="modal-divider"></div>
+
+            <h3 class="items-heading">PURCHASED ITEMS</h3>
+            <div class="modal-items-list" id="modalOrderItems">
+                <!-- Loaded dynamically by BillDetails API -->
+            </div>
+
+            <div class="modal-divider"></div>
+
+            <div class="modal-total-row">
+                <span>TOTAL BILLED</span>
+                <strong id="modalOrderTotal">₹ 0</strong>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/admin_OrdersPage.js"></script>
+
+</body>
+
+</html>
